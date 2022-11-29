@@ -1,0 +1,24 @@
+{
+  "name": "ejercicio-veterinarias",
+  "version": "1.0.0",
+  "description": "Nuestro cliente es una red de veterinarias",
+  "main": "index.js",
+  "scripts": {
+    "convertir": "tsc main.ts",
+    "ejecutar": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarianoCarbajo/ejercicio-veterinarias.git"
+  },
+  "author": "Grupo CTC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarianoCarbajo/ejercicio-veterinarias/issues"
+  },
+  "homepage": "https://github.com/MarianoCarbajo/ejercicio-veterinarias#readme",
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "readline-sync": "^1.4.10"
+  }
+}
