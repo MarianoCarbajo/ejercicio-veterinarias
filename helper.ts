@@ -82,12 +82,17 @@ export function modificarCliente (id:number, arrayCliente: Array<Cliente>){
     console.log("El ID del cliente no existe");
 }
 // Función para borrar un cliente
-export function borrarCliente (id:number, arrayCliente: Array<Cliente>){
+export function borrarCliente (id:number, arrayCliente: Array<Cliente>, arrayPaciente: Array<Paciente>){
     let noExiste:boolean=true;
     for (let i : number =0; i < arrayCliente.length; i++){  
         if (id==arrayCliente[i].getId()){
             arrayCliente.splice(i, 1);
             noExiste=false;
+            for (let j :number=0; j<arrayPaciente.length; j++){
+                if (id==arrayPaciente[j].getId()){
+                    arrayPaciente.splice(j,1);
+                }
+            }
             console.log("El cliente ha sido eliminado");
         }
     } if (noExiste)
@@ -105,7 +110,7 @@ export function crearPaciente (idRamdom:number, paciente: string, arrayPaciente:
 
     arrayPaciente.push(nuevoPaciente);
 }
-// Función para agregar un nuevo cliente
+// Función para agregar un nuevo paciente
 export function agregarPaciente(arrayCliente: Array<Cliente>, arrayPaciente:Array<Paciente>){
     let id:number= ReadlineSync.questionInt("Ingrese el ID del cliente)");
     let noExiste:boolean=true;

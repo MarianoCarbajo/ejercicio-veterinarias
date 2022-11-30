@@ -89,12 +89,17 @@ function modificarCliente(id, arrayCliente) {
 }
 exports.modificarCliente = modificarCliente;
 // Función para borrar un cliente
-function borrarCliente(id, arrayCliente) {
+function borrarCliente(id, arrayCliente, arrayPaciente) {
     var noExiste = true;
     for (var i = 0; i < arrayCliente.length; i++) {
         if (id == arrayCliente[i].getId()) {
             arrayCliente.splice(i, 1);
             noExiste = false;
+            for (var j = 0; j < arrayPaciente.length; j++) {
+                if (id == arrayPaciente[j].getId()) {
+                    arrayPaciente.splice(j, 1);
+                }
+            }
             console.log("El cliente ha sido eliminado");
         }
     }
@@ -113,7 +118,7 @@ function crearPaciente(idRamdom, paciente, arrayPaciente) {
     arrayPaciente.push(nuevoPaciente);
 }
 exports.crearPaciente = crearPaciente;
-// Función para agregar un nuevo cliente
+// Función para agregar un nuevo paciente
 function agregarPaciente(arrayCliente, arrayPaciente) {
     var id = ReadlineSync.questionInt("Ingrese el ID del cliente)");
     var noExiste = true;
