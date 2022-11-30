@@ -89,7 +89,7 @@ while (opcion !== 6) {
                   case 4:
                     console.log("Elegiste opción 4");
                     ingresarID = ReadlineSync.questionInt("id a borrar: ");
-                    borrarCliente(ingresarID,listaClientes);  
+                    borrarCliente(ingresarID,listaClientes,listaPacientes);  
                     break;
                   case 5:
                     break;
